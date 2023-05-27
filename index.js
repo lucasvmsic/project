@@ -1,6 +1,6 @@
 window.sr = ScrollReveal();
-    sr.reveal('html', {
-        duration: 2000,
+    sr.reveal('nav, h1, .card, footer, #carousel', {
+        duration: 1500,
         origin: 'botton',
         distance: '-1rem'
     });
