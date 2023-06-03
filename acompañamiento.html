@@ -12,7 +12,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Baskervville&family=Montserrat&family=Pacifico&family=Satisfy&display=swap"
     rel="stylesheet">
-    <link rel="shortcut icon" href="/img/logo1.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="shortcut icon" href="/img/logo1.png" />
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,15 +21,18 @@
   <title>Tortitas Giss</title>
 </head>
 
-<i id="toggleButton" class="bi bi-bag" onclick="cambiarOpacidad()"></i>
+<!--CARRITO DE COMPRAS-->
+<i id="toggleButton" class="bi bi-bag" onclick="abrirCarrito()"></i>
 
-<div id="overlay" class="glass">
+<div id="overlay">
+  <i id="cerrar" class="bi bi-x-circle" onclick="cerrarCarrito()"></i>
   <div class="carrito">
-    <h2>Carrito de compras</h2>
+    <h2 class="title">Carrito de compras</h2>
     <div class="container wd-80">
-      <p>Producto</p>
-      <p>cantidad</p>
-      <p>precio</p>
+      <ul id="carrito">
+        <li>Relleno</li>
+      </ul>
+
     </div>
   </div>
 </div>
@@ -36,7 +40,7 @@
 <body>
   <div class="all">
     <div class="navfalso"></div>
-      <!--Barra de navegación-->
+    <!--Barra de navegación-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 h-2">
       <div class="container-fluid">
         <img class="p-1" src="/img/logo2.png" height="70rem" width="70rem">
@@ -102,15 +106,15 @@
           </div>
         </div>
         <div class="col">
-          <div id="dona2" class="card h-100">
+          <div id="dona2" class="card h-100"> <!--2da tarjeta-->
             <img src="/img/acompañamiento/dona2.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
               <select id="dona2.relleno" class="form-select" aria-label="Default select example">
                 <option selected>Relleno</option>
-                <option value="1">Manjar</option>
-                <option value="2">Pastelera</option>
-                <option value="3">Frambuesa</option>
-                <option value="4">Nutella</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
               </select>
               <select id="dona2.cantidad" class="form-select" aria-label="Default select example">
                 <option selected>Cantidad</option>
@@ -121,7 +125,7 @@
               </select>
             </div>
             <div class="card-footer d-md-flex justify-content-md-center">
-              <a class="btn btn-outline-success">Agregar al carro</a>
+              <a onclick="agregar()" class="btn btn-outline-success">Agregar al carro</a>
             </div>
           </div>
         </div>
@@ -428,12 +432,13 @@
             href="https://www.facebook.com/profile.php?id=100009075369122" role="button" data-mdb-ripple-color="dark"><i
               class="bi bi-facebook"></i></a>
           <!-- Instagram -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/tortitas__giss/" role="button"
-            data-mdb-ripple-color="dark"><i class="bi bi-instagram"></i></a>
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/tortitas__giss/"
+            role="button" data-mdb-ripple-color="dark"><i class="bi bi-instagram"></i></a>
           <!-- WhatsApp -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://api.whatsapp.com/send?phone=56993161234" role="button"
-            data-mdb-ripple-color="dark"><i class="bi bi-whatsapp"></i></a>
-            <p style="color: rgb(7, 5, 26);">Héroe José Argomedo 3723, Recoleta, Región Metropolitana.</p>
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://api.whatsapp.com/send?phone=56993161234" role="button" data-mdb-ripple-color="dark"><i
+              class="bi bi-whatsapp"></i></a>
+          <p style="color: rgb(7, 5, 26);">Héroe José Argomedo 3723, Recoleta, Región Metropolitana.</p>
         </section>
         <!-- Section: Social media -->
       </div>
@@ -442,11 +447,15 @@
       </div>
     </footer>
 
-
+<!--SCRIPTS-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
     <style>
       body {
         background: magnolia;
@@ -491,6 +500,7 @@
 
       ul {
         margin-right: 10rem;
+        
       }
 
       #carousel {
@@ -533,8 +543,8 @@
         height: 70%;
         background-color: rgb(235, 241, 245);
         z-index: 1;
-        transition: 5s ease;
-        opacity: 0.5;
+        transition: 2s ease;
+        opacity: 0;
         border-radius: 1rem;
         box-shadow: 2px 2px 2px 1px rgba(137, 137, 137, 0.496);
       }
@@ -548,27 +558,49 @@
         opacity: 1;
         transition: opacity 0.7s;
       }
-      footer a:hover {
-      transform: scale(1.2);
-      transition: 1.5s ease;
-      transform: rotate(1080deg);
 
-    }
-    .navbar{
-      box-shadow: 0rem 0.1rem 5rem 2rem rgba(0, 0, 0, 0.2);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 100;
-      height: 4.5;
-    }
-    .card{
-      box-shadow: 0rem 0.01rem 2rem 0.5rem rgba(0, 0, 0, 0.2);
-    }
-    .navfalso{
-      height: 4.5rem;
-      width: 100%;
-    }
+      footer a:hover {
+        transform: scale(1.2);
+        transition: 1.5s ease;
+        transform: rotate(1080deg);
+
+      }
+
+      .navbar {
+        box-shadow: 0rem 0.1rem 5rem 2rem rgba(0, 0, 0, 0.2);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        height: 4.5;
+      }
+
+      .card {
+        box-shadow: 0rem 0.01rem 2rem 0.5rem rgba(0, 0, 0, 0.2);
+      }
+
+      .navfalso {
+        height: 4.5rem;
+        width: 100%;
+      }
+
+      #cerrar {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+
+        font-size: 2rem;
+      }
+
+      #cerrar:hover {
+        cursor: pointer;
+      }
+
+      .title {
+        text-align: center;
+        font-family: 'Courgette', cursive;
+        margin: 2rem;
+      }
 
       --magnolia: #fcf7ffff;
       --battleship-gray: #798071ff;
