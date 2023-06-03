@@ -27,11 +27,12 @@ window.sr = ScrollReveal();
     
     boton.addEventListener("click", function() {
       overlay.style.display = overlay.style.display === "none" ? "block" : "none";
+
     });
     
 
     function cambiarOpacidad() {
-        var elemento = document.querySelector('.elemento');
+        var elemento = document.querySelector('.all');
         if (elemento.style.opacity === '1') {
             elemento.style.opacity = '0.5'; // Cambiar la opacidad a 0.5
         } else {
@@ -39,9 +40,9 @@ window.sr = ScrollReveal();
         }
 
         var overlay = document.getElementById("overlay");
-        if (overlay.style.opacity === '0.8') {
-            overlay.style.opacity = '0.8'; // Cambiar la opacidad a 0.5
+        if (overlay.style.opacity === '0.5') {
+            overlay.style.opacity = '1'; // Cambiar la opacidad a 0.5
         } else {
-            overlay.style.opacity = '1'; // Restaurar la opacidad a 1
+            overlay.style.opacity = '0.5'; // Restaurar la opacidad a 1
         }
         }

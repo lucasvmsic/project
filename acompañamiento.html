@@ -12,11 +12,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Baskervville&family=Montserrat&family=Pacifico&family=Satisfy&display=swap"
     rel="stylesheet">
+    <link rel="shortcut icon" href="/img/logo1.png" />
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Tortitas Giss</title>
 </head>
 
 <i id="toggleButton" class="bi bi-bag" onclick="cambiarOpacidad()"></i>
@@ -33,8 +34,9 @@
 </div>
 
 <body>
-  <!--Barra de navegación-->
-  <div class="elemento">
+  <div class="all">
+    <div class="navfalso"></div>
+      <!--Barra de navegación-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 h-2">
       <div class="container-fluid">
         <img class="p-1" src="/img/logo2.png" height="70rem" width="70rem">
@@ -58,7 +60,7 @@
               <a class="nav-link active" aria-current="page" href="acompañamiento.html#cakepops">Cake Pops</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
+              <a class="nav-link" href="#footer">Contacto</a>
             </li>
           </ul>
         </div>
@@ -74,7 +76,7 @@
 
       <!--Tarjetas con los productos-->
 
-      <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+      <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4 justify-content-center">
         <div class="col">
           <div id="dona1" class="card h-100">
             <img src="/img/acompañamiento/dona1.jpg" class="card-img-top" alt="...">
@@ -254,7 +256,7 @@
 
       <!--Tarjetas con los productos-->
 
-      <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+      <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4 justify-content-center">
         <div class="col">
           <div class="card h-100">
             <img src="/img/acompañamiento/cupcake1.jpg" class="card-img-top" alt="...">
@@ -337,7 +339,7 @@
 
       <!--Tarjetas con los productos-->
 
-      <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+      <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4 justify-content-center">
         <div class="col">
           <div class="card h-100">
             <img src="/img/acompañamiento/cakepos1.jpg" class="card-img-top" alt="...">
@@ -418,7 +420,7 @@
 
 
     <!--Footer-->
-    <footer class="text-center text-white">
+    <footer id="footer" class="text-center text-white">
       <div class="container pt-4">
         <section class="mb-4">
           <!-- Facebook -->
@@ -426,12 +428,12 @@
             href="https://www.facebook.com/profile.php?id=100009075369122" role="button" data-mdb-ripple-color="dark"><i
               class="bi bi-facebook"></i></a>
           <!-- Instagram -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/tortitas__giss/" role="button"
             data-mdb-ripple-color="dark"><i class="bi bi-instagram"></i></a>
           <!-- WhatsApp -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://api.whatsapp.com/send?phone=56993161234" role="button"
             data-mdb-ripple-color="dark"><i class="bi bi-whatsapp"></i></a>
-
+            <p style="color: rgb(7, 5, 26);">Héroe José Argomedo 3723, Recoleta, Región Metropolitana.</p>
         </section>
         <!-- Section: Social media -->
       </div>
@@ -508,8 +510,8 @@
         height: 3.5rem;
         width: 3.5rem;
         line-height: 3.5rem;
-        top: 0.4rem;
-        right: 5rem;
+        bottom: 2rem;
+        right: 1rem;
         background: rgba(14, 44, 60, 0.745);
         color: white;
         border-radius: 10rem;
@@ -531,8 +533,8 @@
         height: 70%;
         background-color: rgb(235, 241, 245);
         z-index: 1;
-        transition: 2s ease;
-        opacity: 0.8;
+        transition: 5s ease;
+        opacity: 0.5;
         border-radius: 1rem;
         box-shadow: 2px 2px 2px 1px rgba(137, 137, 137, 0.496);
       }
@@ -542,10 +544,31 @@
         text-align: center;
       }
 
-      .elemento {
+      .all {
         opacity: 1;
         transition: opacity 0.7s;
       }
+      footer a:hover {
+      transform: scale(1.2);
+      transition: 1.5s ease;
+      transform: rotate(1080deg);
+
+    }
+    .navbar{
+      box-shadow: 0rem 0.1rem 5rem 2rem rgba(0, 0, 0, 0.2);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      height: 4.5;
+    }
+    .card{
+      box-shadow: 0rem 0.01rem 2rem 0.5rem rgba(0, 0, 0, 0.2);
+    }
+    .navfalso{
+      height: 4.5rem;
+      width: 100%;
+    }
 
       --magnolia: #fcf7ffff;
       --battleship-gray: #798071ff;
