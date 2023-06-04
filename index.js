@@ -106,18 +106,18 @@ const mostrarCarrito = () => {
             contCarrito.innerHTML += `
 
         
-        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" style="margin-top: 0.01rem;">
         <div class="col">
-            <div class="card h-100 card-carrito">
+            <div class="card h-100 card-carrito m-t-2 card-carrito">
                 <img src="${img}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">${nombre}</h5>
-                        <h5 class="card-title">Cantidad: ${cantidad}</h5>
-                        <h5 class="card-title">Relleno: ${relleno}</h5>
-                        <h5 class="card-title">Precio: ${precio}</h5>
+                        <h5 class="title-subtotal">${nombre}</h5>
+                        <h6 class="title-subtotal">Cantidad: ${cantidad}</h6>
+                        <h6 class="title-subtotal">Relleno: ${relleno}</h6>
+                        <h6 class="title-subtotal">Precio: ${precio}</h6>
                     </div>
-                    <div class="card-footer d-md-flex justify-content-md-center">
-                    <a href="#" class="btn btn-outline-danger">Eliminar producto</a>
+                    <div class="card-footer md-flex justify-content-center">
+                    <a style="display: block; margin: 0 auto; width: 80%;" class="btn btn-outline-danger">Eliminar producto</a>
                     </div>
             </div>
         </div>
@@ -127,7 +127,6 @@ const mostrarCarrito = () => {
         });
     }
 }
-
 
 
 
