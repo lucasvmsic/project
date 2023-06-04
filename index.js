@@ -74,15 +74,15 @@ function agregarProducto(id) {
 const mostrarCarrito = () => {
     const contCarrito = document.querySelector(".contcarrito");
 
-    var valores= [];
+    var valores = [];
     var select = document.getElementsByClassName('cantidad');
-    Array.from(select).forEach(function(select){
+    Array.from(select).forEach(function (select) {
         var valor = select.value;
         valores.push(valor);
     })
     console.log(valores);
 
-      carrito.forEach((prod, i) => {
+    carrito.forEach((prod, i) => {
         prod.cantidad = valores[i];
         console.log(valores[i]);
         const { id, nombre, precio, img, cantidad, relleno } = prod;
@@ -90,23 +90,25 @@ const mostrarCarrito = () => {
         console.log(contCarrito);
         contCarrito.innerHTML += `
 
-        <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4 justify-content-center">
+        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
         <div class="col">
-          <div class="card h-100 card-carrito">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div class="card h-100 card-carrito">
+                <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
             </div>
-            <div class="card-footer">
-              <small class="text-body-secondary">Last updated 3 mins ago</small>
-            </div>
-          </div>
         </div>
+    </div>
+
     
         `;
-      });
-    }
+    });
+}
 
 
 
@@ -130,22 +132,22 @@ var overlay = document.getElementById("overlay");
 
  });
  */
-let i=0;
+let i = 0;
 function abrirCarrito() {
     var elemento = document.querySelector('.all');
-    if(i%2==0){
-    elemento.style.opacity = '0.5';
-    overlay.style.opacity = '1';
-    overlay.style.display = "block";
+    if (i % 2 == 0) {
+        elemento.style.opacity = '0.5';
+        overlay.style.opacity = '1';
+        overlay.style.display = "block";
     }
-    else{
+    else {
         elemento.style.opacity = '1';
         overlay.style.opacity = '0';
         overlay.style.display = "none";
     }
     i++;
 }
-  
+
 /*
 function agregar() {
 
@@ -157,7 +159,7 @@ function agregar() {
     listaDeCompras.appendChild(li);
 }
 */
-function cerrarCarrito(){
+function cerrarCarrito() {
     var elemento = document.querySelector('.all');
     elemento.style.opacity = '1';
 
