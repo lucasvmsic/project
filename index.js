@@ -57,8 +57,8 @@ sr.reveal('nav, h1, .card, footer, #carousel', {
     distance: '-1rem'
 });
 
-function agregarProducto(id) {
-    var nombre = "dona1";
+const agregarProducto = (id) =>{
+
     toastr.success("Agregado al carrito");
 
     const item = stockProductos.find((prod) => prod.id === id);
@@ -68,102 +68,121 @@ function agregarProducto(id) {
 
 
 
-}
+
+};
+
+
 
 
 const mostrarCarrito = () => {
     const contCarrito = document.querySelector(".contcarrito");
 
-    var valores = [];
+    var cantidades = [];
+    var rellenos = [];
     var select = document.getElementsByClassName('cantidad');
     Array.from(select).forEach(function (select) {
-        var valor = select.value;
-        valores.push(valor);
+        var cantidad = select.value;
+        cantidades.push(cantidad);
     })
-    console.log(valores);
 
-    carrito.forEach((prod, i) => {
-        prod.cantidad = valores[i];
-        console.log(valores[i]);
-        const { id, nombre, precio, img, cantidad, relleno } = prod;
-        i++;
-        console.log(contCarrito);
-        contCarrito.innerHTML += `
+    var selectrelleno = document.getElementsByClassName('relleno');
+    Array.from(selectrelleno).forEach(function (selectrelleno) {
+        var relleno = selectrelleno.value;
+        rellenos.push(relleno);
+    })
+    console.log(rellenos);
 
-        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+    /*ACA HAY ALGO MAL KTMMM*/
+    if (carrito) {
+        carrito.innerHTML = ""
+        carrito.forEach((prod) => {
+
+            prod.cantidad = cantidades[prod.id - 1];
+            prod.relleno = rellenos[prod.id - 1];
+            console.log(prod.relleno)
+            var { id, nombre, precio, img, cantidad, relleno } = prod;
+            precio=precio*cantidad;
+            console.log(contCarrito);
+            contCarrito.innerHTML += `
+
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
         <div class="col">
             <div class="card h-100 card-carrito">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="${img}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title">${nombre}</h5>
+                        <h5 class="card-title">Cantidad: ${cantidad}</h5>
+                        <h5 class="card-title">Relleno: ${relleno}</h5>
+                        <h5 class="card-title">Precio: ${precio}</h5>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    <div class="card-footer d-md-flex justify-content-md-center">
+                    <a href="#" class="btn btn-outline-danger">Eliminar producto</a>
                     </div>
             </div>
         </div>
     </div>
-
     
         `;
-    });
-}
-
-
-
-
-function cupcake() {
-
-    var relleno1 = document.getElementById("cupcake.relleno").value;
-    var cantidad1 = document.getElementById("cupcake.cantidad").value;
-    location.href = 'https://wa.me/56921693746?text=Hola,%20Quiero%20' + cantidad1 + '%20cupcake%20con%20' + relleno1;
-}
-
-
-
-var boton = document.getElementById("toggleButton");
-var overlay = document.getElementById("overlay");
-
-/* boton.addEventListener("mousedown", function() {
-   overlay.style.display = overlay.style.display === "none" ? "block" : "none";
-   console.log("Botón clickeado");
-   console.log("Valor actual de display:", overlay.style.display);
-
- });
- */
-let i = 0;
-function abrirCarrito() {
-    var elemento = document.querySelector('.all');
-    if (i % 2 == 0) {
-        elemento.style.opacity = '0.5';
-        overlay.style.opacity = '1';
-        overlay.style.display = "block";
+        });
     }
-    else {
+}
+
+
+
+
+
+    function cupcake() {
+
+        var relleno1 = document.getElementById("cupcake.relleno").value;
+        var cantidad1 = document.getElementById("cupcake.cantidad").value;
+        location.href = 'https://wa.me/56921693746?text=Hola,%20Quiero%20' + cantidad1 + '%20cupcake%20con%20' + relleno1;
+    }
+
+
+
+    var boton = document.getElementById("toggleButton");
+    var overlay = document.getElementById("overlay");
+
+    /* boton.addEventListener("mousedown", function() {
+       overlay.style.display = overlay.style.display === "none" ? "block" : "none";
+       console.log("Botón clickeado");
+       console.log("Valor actual de display:", overlay.style.display);
+    
+     });
+     */
+    let i = 0;
+    function abrirCarrito() {
+        var elemento = document.querySelector('.all');
+        if (i % 2 == 0) {
+            elemento.style.opacity = '0.5';
+            overlay.style.opacity = '1';
+            overlay.style.display = "block";
+        }
+        else {
+            elemento.style.opacity = '1';
+            overlay.style.opacity = '0';
+            overlay.style.display = "none";
+        }
+        i++;
+    }
+
+    /*
+    function agregar() {
+    
+        var relleno = document.getElementById("dona2.relleno").value;
+        var cantidad = document.getElementById("dona2.cantidad").value;
+        const listaDeCompras = document.querySelector("#carrito");
+        const li = document.createElement("li");
+        li.textContent = relleno;
+        listaDeCompras.appendChild(li);
+    }
+    */
+    function cerrarCarrito() {
+        var elemento = document.querySelector('.all');
         elemento.style.opacity = '1';
+
         overlay.style.opacity = '0';
         overlay.style.display = "none";
+        i++;
     }
-    i++;
-}
-
-/*
-function agregar() {
-
-    var relleno = document.getElementById("dona2.relleno").value;
-    var cantidad = document.getElementById("dona2.cantidad").value;
-    const listaDeCompras = document.querySelector("#carrito");
-    const li = document.createElement("li");
-    li.textContent = relleno;
-    listaDeCompras.appendChild(li);
-}
-*/
-function cerrarCarrito() {
-    var elemento = document.querySelector('.all');
-    elemento.style.opacity = '1';
-
-    overlay.style.opacity = '0';
-    overlay.style.display = "none";
-    i++;
-}
