@@ -76,6 +76,7 @@ const agregarProducto = (id) =>{
 
 const mostrarCarrito = () => {
     const contCarrito = document.querySelector(".contcarrito");
+    contCarrito.innerHTML = ''
 
     var cantidades = [];
     var rellenos = [];
@@ -94,7 +95,6 @@ const mostrarCarrito = () => {
 
     /*ACA HAY ALGO MAL KTMMM*/
     if (carrito) {
-        carrito.innerHTML = ""
         carrito.forEach((prod) => {
 
             prod.cantidad = cantidades[prod.id - 1];

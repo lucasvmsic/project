@@ -34,9 +34,21 @@
 
   <div class="contcarrito">
     <nav class="nav2falso"></nav>
-    
+
 
   </div>
+
+  <div class="subtotal">
+    <h5 class="position-absolute end-50 m-2 title">Subtotal: 1.000</h6>
+  </div>
+  <div class="footer-carrito d-md-flex justify-content-center">
+    <button type="button" class="btn btn-outline-danger m-1 position-absolute bottom-0 start-50">Vaciar
+      carrito</button>
+    <button type="button" class="btn btn-outline-success m-1 position-absolute bottom-0 end-50">Finalizar
+      compra</button>
+  </div>
+
+
 </div>
 
 <body>
@@ -547,10 +559,10 @@
         display: none;
         position: fixed;
         justify-content: center;
-        top: 5%;
+        top: 2.5%;
         left: 5%;
         width: 90%;
-        height: 90%;
+        height: 95%;
         background-color: rgb(235, 241, 245);
         z-index: 1;
         transition: 2s ease;
@@ -595,6 +607,7 @@
         height: 4.5rem;
         width: 100%;
       }
+
       .nav2falso {
         height: 4.05rem;
         width: 100%;
@@ -624,7 +637,7 @@
       }
 
       .contcarrito {
-        height: 100%;
+        height: 85%;
         width: 100%;
         overflow-y: auto;
         overflow-x: hidden;
@@ -634,20 +647,22 @@
 
       @media (max-width: 1200px) {
         .contcarrito {
-          height: 100%;
+          height: 87%;
           width: 100%;
           overflow-y: auto;
           overflow-x: hidden;
           border-radius: 1rem;
         }
       }
-      .text-carrito{
+
+      .text-carrito {
         position: fixed;
         z-index: 100;
         background-color: rgb(235, 241, 245);
         left: 40%;
       }
-      .h2falso{
+
+      .h2falso {
         background-color: rgb(235, 241, 245);
         z-index: 100;
         height: 4rem;
@@ -659,15 +674,17 @@
         border-top-right-radius: 1rem;
 
       }
+
       @media (max-width: 1200px) {
         .text-carrito {
           position: fixed;
-        z-index: 100;
-        background-color: rgb(235, 241, 245);
-        left: 15%;
+          z-index: 100;
+          background-color: rgb(235, 241, 245);
+          left: 15%;
         }
       }
-      .card-title{
+
+      .card-title {
         text-align: center;
       }
 
