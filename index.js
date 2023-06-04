@@ -1,18 +1,113 @@
+const stockProductos = [
+    {
+        id: 1,
+        nombre: 'minidona',
+        img: "/img/acompañamiento/dona1.jpg",
+        precio: 10000,
+    },
+    {
+        id: 2,
+        nombre: 'minidona',
+        img: "/img/acompañamiento/dona2.jpg",
+        precio: 20000,
+    },
+    {
+        id: 3,
+        nombre: 'minidona',
+        img: "/img/acompañamiento/dona3.jpg",
+        precio: 30000,
+    },
+    {
+        id: 4,
+        nombre: 'minidona',
+        img: "/img/acompañamiento/dona4.jpg",
+        precio: 40000,
+    },
+    {
+        id: 5,
+        nombre: 'minidona',
+        img: "/img/acompañamiento/dona5.jpg",
+        precio: 50000,
+    },
+    {
+        id: 6,
+        nombre: 'minidona',
+        img: "/img/acompañamiento/dona6.jpg",
+        precio: 60000,
+    },
+    {
+        id: 7,
+        nombre: 'minidona',
+        img: "/img/acompañamiento/dona7.jpg",
+        precio: 70000,
+    },
+
+];
+
+let carrito = [];
+
+
+
+
+
 window.sr = ScrollReveal();
 sr.reveal('nav, h1, .card, footer, #carousel', {
-    duration: 1500,
+    duration: 1300,
     origin: 'botton',
     distance: '-1rem'
 });
 
-function captura() {
+function agregarProducto(id) {
     var nombre = "dona1";
-    var relleno = document.getElementById("dona1.relleno").value;
-    var cantidad = document.getElementById("dona1.cantidad").value;
     toastr.success("Agregado al carrito");
+
+    const item = stockProductos.find((prod) => prod.id === id);
+    carrito.push(item);
+    console.log(item);
+    mostrarCarrito();
+
 
 
 }
+
+
+const mostrarCarrito = () => {
+    const contCarrito = document.querySelector(".contcarrito");
+
+    var valores= [];
+    var select = document.getElementsByClassName('cantidad');
+    Array.from(select).forEach(function(select){
+        var valor = select.value;
+        valores.push(valor);
+    })
+    console.log(valores);
+
+      carrito.forEach((prod, i) => {
+        prod.cantidad = valores[i];
+        console.log(valores[i]);
+        const { id, nombre, precio, img, cantidad, relleno } = prod;
+        i++;
+        console.log(contCarrito);
+        contCarrito.innerHTML += `
+        <div class="modal-contenedor">
+          <div>
+          <img class="imgcarrito" src="${img}"/>
+          </div>
+          <div>
+          <p>Producto: ${nombre}</p>
+        <p>Precio: ${precio}</p>
+        <p>Cantidad :${cantidad}</p>
+        <button class="btn btn-danger"  onclick="eliminarProducto(${id})">Eliminar producto</button>
+          </div>
+        </div>
+    
+        `;
+      });
+    }
+
+
+
+
 function cupcake() {
 
     var relleno1 = document.getElementById("cupcake.relleno").value;
@@ -48,7 +143,7 @@ function abrirCarrito() {
     i++;
 }
   
-
+/*
 function agregar() {
 
     var relleno = document.getElementById("dona2.relleno").value;
@@ -58,6 +153,7 @@ function agregar() {
     li.textContent = relleno;
     listaDeCompras.appendChild(li);
 }
+*/
 function cerrarCarrito(){
     var elemento = document.querySelector('.all');
     elemento.style.opacity = '1';
