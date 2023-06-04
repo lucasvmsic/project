@@ -89,15 +89,18 @@ const mostrarCarrito = () => {
         i++;
         console.log(contCarrito);
         contCarrito.innerHTML += `
-        <div class="modal-contenedor">
-          <div>
-          <img class="imgcarrito" src="${img}"/>
-          </div>
-          <div>
-          <p>Producto: ${nombre}</p>
-        <p>Precio: ${precio}</p>
-        <p>Cantidad :${cantidad}</p>
-        <button class="btn btn-danger"  onclick="eliminarProducto(${id})">Eliminar producto</button>
+
+        <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4 justify-content-center">
+        <div class="col">
+          <div class="card h-100 card-carrito">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
           </div>
         </div>
     

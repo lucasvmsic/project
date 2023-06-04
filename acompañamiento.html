@@ -27,9 +27,9 @@
 
 <div id="overlay">
   <i id="cerrar" class="bi bi-x-circle" onclick="cerrarCarrito()"></i>
-  <div class="carrito justify-content-center">
+  <div class="carrito">
     <h2 class="title">Carrito de compras</h2>
-    <div class="container contcarrito">
+    <div class="contcarrito">
 
     </div>
   </div>
@@ -535,10 +535,10 @@
         display: none;
         position: fixed;
         justify-content: center;
-        top: 15%;
-        left: 10%;
-        width: 80%;
-        height: 80%;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
         background-color: rgb(235, 241, 245);
         z-index: 1;
         transition: 2s ease;
@@ -550,6 +550,8 @@
       .carrito {
         align-items: center;
         text-align: center;
+        display: block;
+        justify-content: center;
       }
 
       .all {
@@ -584,8 +586,8 @@
 
       #cerrar {
         position: absolute;
-        top: 0.5rem;
-        right: 1rem;
+        top: 0.1rem;
+        right: 0.5rem;
 
         font-size: 2rem;
       }
@@ -597,17 +599,28 @@
       .title {
         text-align: center;
         font-family: 'Courgette', cursive;
-        margin: 1rem;
+        margin: 0.6rem;
       }
       .imgcarrito{
         height: 5rem;
         width: 5rem;
       }
       .contcarrito{
-        height: 30rem;
-        width: 74rem;
-        overflow: auto;
+        height: 35rem;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border-radius: 1rem;
+        
       }
+      /*
+      .card-carrito{
+        width: 20rem;
+      }
+*/
+
+
+
       --magnolia: #fcf7ffff;
       --battleship-gray: #798071ff;
       --gunmetal: #143642ff;
