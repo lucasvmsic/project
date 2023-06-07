@@ -46,7 +46,7 @@ const stockProductos = [
 
 let carrito = [];
 
-
+const precioTotal = document.querySelector('#precioTotal')
 
 
 
@@ -71,15 +71,15 @@ const agregarProducto = (id) =>{
 
 };
 
-
-
+var cantidades = [];
+var rellenos = [];
+var subtotal = 0;
 
 const mostrarCarrito = () => {
     const contCarrito = document.querySelector(".contcarrito");
     contCarrito.innerHTML = ''
 
-    var cantidades = [];
-    var rellenos = [];
+
     var select = document.getElementsByClassName('cantidad');
     Array.from(select).forEach(function (select) {
         var cantidad = select.value;
@@ -93,6 +93,12 @@ const mostrarCarrito = () => {
     })
     console.log(rellenos);
 
+
+
+  /*  const contCarrito = document.querySelector(".contcarrito");*/
+
+
+    
     /*ACA HAY ALGO MAL KTMMM*/
     if (carrito) {
         carrito.forEach((prod) => {
@@ -100,8 +106,10 @@ const mostrarCarrito = () => {
             prod.cantidad = cantidades[prod.id - 1];
             prod.relleno = rellenos[prod.id - 1];
             console.log(prod.relleno)
-            var { id, nombre, precio, img, cantidad, relleno } = prod;
-            precio=precio*cantidad;
+            const { id, nombre, precio, img, cantidad, relleno } = prod;
+            console.log(precio)
+
+
             console.log(contCarrito);
             contCarrito.innerHTML += `
 
@@ -124,8 +132,17 @@ const mostrarCarrito = () => {
     </div>
     
         `;
+
+
+        /*dentro del foreach*/
+
         });
+        
+        
     }
+
+
+    
 }
 
 

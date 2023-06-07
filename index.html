@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Kalam:wght@300&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="/img/logo1.png" />
+  <link rel="shortcut icon" href="/img/logo2.png" />
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,22 +51,17 @@
       </div>
     </nav>
     <!--Carousel-->
-    <div id="carousel" class="container w-70">
+    <div id="carousel" class="container carrusel">
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/297/308/themes/style/1-slide-1597066334407-6924608568-63486a0cda093d4c08c5ffe16c095eab1597066338-1920-1920.webp?1631237203"
+              src="img/banner.png"
               class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
             <img
-              src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/297/308/themes/style/1-slide-1673467075604-3220507941-bd1335bd2a9c164b272a356258e752101673467098-1920-1920.webp?1631237203"
-              class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/297/308/themes/style/1-slide-1673467075606-3649876536-0f2b31eec037068e8a161d58287655cd1673467099-1920-1920.webp?1631237203"
+              src="img/banner2.png"
               class="d-block w-100" alt="...">
           </div>
         </div>
@@ -153,23 +148,23 @@
 
   <!--Footer-->
   <footer id="footer" class="text-center text-white">
-    <div class="container pt-4">
+    <div class="container pt-0" style="height: 6.5rem;">
       <section class="mb-4">
         <!-- Facebook -->
-        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+        <a class="btn btn-link btn-floating btn-lg text-dark" style=" padding: 0,margin margin-bottom: 0rem;"
           href="https://www.facebook.com/profile.php?id=100009075369122" role="button" data-mdb-ripple-color="dark"><i
             class="bi bi-facebook"></i></a>
         <!-- Instagram -->
-        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/tortitas__giss/"
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" style=" padding: 0;" href="https://www.instagram.com/tortitas__giss/"
           role="button" data-mdb-ripple-color="dark"><i class="bi bi-instagram"></i></a>
         <!-- WhatsApp -->
-        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://api.whatsapp.com/send?phone=56993161234"
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" style=" padding: 0, margin-botom: 0rem;" href="https://api.whatsapp.com/send?phone=56993161234"
           role="button" data-mdb-ripple-color="dark"><i class="bi bi-whatsapp"></i></a>
         <p style="color: rgb(7, 5, 26);">Héroe José Argomedo 3723, Recoleta, Región Metropolitana.</p>
       </section>
       <!-- Section: Social media -->
     </div>
-    <div class="text-center text-dark p-3" style="background-color:#cecdcaff;;">
+    <div class="text-center text-dark p-3" style="background: #98c5d6;">
       © 2023 Copyright: Hijos de Newton.
     </div>
   </footer>
@@ -213,8 +208,9 @@
     }
 
     footer {
-      background: #e3f3e2ff;
+      background:#dee2e5;
       margin-top: 0.5rem;
+      margin-top: 3rem;
     }
 
     ul {
@@ -262,8 +258,15 @@
     .btn1{
       display: block; margin: 0 auto; width: 80%;
     }
+    @media (min-width: 1200px) {
+        .carrusel {
+          width: 60%;
+        }
+      }
 
-    --magnolia: #fcf7ffff;
+
+
+    --magnolia: #fcf7ffff; 
     --battleship-gray: #798071ff;
     --gunmetal: #143642ff;
     --cordovan: #8e3b46ff;
