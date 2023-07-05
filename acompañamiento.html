@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Kalam:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baskervville&family=Montserrat&family=Pacifico&family=Satisfy&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="shortcut icon" href="/img/logo2.png" />
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tortitas Giss</title>
+</head>
+
+
+<!--CARRITO DE COMPRAS-->
+
+
+<i id="toggleButton" class="bi bi-bag" onclick="abrirCarrito()"></i>
+<div id="overlay">
+  <div class="h2falso">
+    <h2 class="title text-carrito">Carrito de compras</h2>
+    <i id="cerrar" class="bi bi-x-circle" onclick="cerrarCarrito()"></i>
+  </div>
+
+  <div class="contcarrito">
+    <nav class="nav2falso"></nav>
+
+
+  </div>
+
+  <div class="subtotal">
+    <h5 class="mx-auto m-2 title-subtotal" id="subtotal">Subtotal: 0</h5>
+      <div class="footer-carrito d-md-flex justify-content-center">
+        <button type="button" class="btn btn-outline-danger m-2 position-absolute bottom-0 end-50" onclick="vaciarCarrito()">Vaciar
+          carrito</button>
+        <button type="button" class="btn btn-outline-success m-2 position-absolute bottom-0 start-50" onclick="comprar()">Comprar</button>
+      </div>
+  </div>
+
+
+
+</div>
+
+<body>
+  <div class="all">
+    <div class="navfalso"></div>
+    <!--Barra de navegación-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 h-2">
+      <div class="container-fluid">
+        <img class="p-1" src="/img/logo2.png" height="70rem" width="70rem">
+        <a class="navbar-brand p-2" href="index.html">Tortitas Giss</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="acompañamiento.html">Tortas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="acompañamiento.html">Mini Donas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="acompañamiento.html#cupcakes">Cupcakes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="acompañamiento.html#cakepops">Cake Pops</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+    <h1 class="title">Mini Donas</h1>
+
+    <div class="container w-80 justify-content-center">
+
+      <!--Tarjetas con los productos-->
+
+      <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4 justify-content-center">
+        <div class="col">
+          <div class="card h-100">
+            <img src="/img/acompañamiento/dona1.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <h5 class="card-title">Precio: $10.000</h5>
+              <select class="form-select relleno-1" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
+              </select>
+              <select class="form-select cantidad-1" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a id="1" onclick="agregarProducto(1)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div id="dona2" class="card h-100"> <!--2da tarjeta-->
+            <img src="/img/acompañamiento/dona2.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <h5 class="card-title">Precio: $20.000</h5>
+              <select class="form-select relleno-2" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
+              </select>
+              <select class="form-select cantidad-2" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a id="2" onclick="agregarProducto(2)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/img/acompañamiento/dona3.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <h5 class="card-title">Precio: $30.000</h5>
+              <select class="form-select relleno-3" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
+              </select>
+              <select class="form-select cantidad-3" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a id="3" onclick="agregarProducto(3)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/img/acompañamiento/dona4.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <h5 class="card-title">Precio: $40.000</h5>
+              <select class="form-select relleno-4" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
+              </select>
+              <select class="form-select cantidad-4" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a onclick="agregarProducto(4)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/img/acompañamiento/dona5.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <h5 class="card-title">Precio: $50.000</h5>
+              <select class="form-select relleno-5" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
+              </select>
+              <select class="form-select cantidad-5" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a onclick="agregarProducto(5)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/img/acompañamiento/dona6.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <h5 class="card-title">Precio: $60.000</h5>
+              <select class="form-select relleno-6" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
+              </select>
+              <select class="form-select cantidad-6" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a onclick="agregarProducto(6)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/img/acompañamiento/dona7.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <h5 class="card-title">Precio: $70.000</h5>
+              <select class="form-select relleno-7" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
+              </select>
+              <select class="form-select cantidad-7" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a onclick="agregarProducto(7)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <h1 id="cupcakes" class="title">Cupcakes</h1>
+
+    <div class="container w-80 justify-content-center">
+
+      <!--Tarjetas con los productos-->
+
+      <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4 justify-content-center">
+        <div class="col">
+          <div class="card h-100">
+            <img src="/img/acompañamiento/cupcake1.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <select class="form-select relleno-8" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
+              </select>
+              <select class="form-select cantidad-8" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a onclick="agregarProducto(8)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/img/acompañamiento/cupcake2.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <select class="form-select relleno-9" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="1">Manjar</option>
+                <option value="2">Pastelera</option>
+                <option value="3">Frambuesa</option>
+                <option value="4">Nutella</option>
+              </select>
+              <select class="form-select cantidad-9" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a onclick="agregarProducto(9)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/img/acompañamiento/cupcake3.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <select class="form-select relleno-10" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="1">Manjar</option>
+                <option value="2">Pastelera</option>
+                <option value="3">Frambuesa</option>
+                <option value="4">Nutella</option>
+              </select>
+              <select class="form-select cantidad-10" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a onclick="agregarProducto(10)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <h1 id="cakepops" class="title">Cake Pops</h1>
+
+    <div class="container w-80 justify-content-center">
+
+      <!--Tarjetas con los productos-->
+
+      <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4 justify-content-center">
+        <div class="col">
+          <div class="card h-100">
+            <img src="/img/acompañamiento/cakepos1.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <select class="form-select relleno-11" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="1">Manjar</option>
+                <option value="2">Pastelera</option>
+                <option value="3">Frambuesa</option>
+                <option value="4">Nutella</option>
+              </select>
+              <select class="form-select cantidad-11" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a onclick="agregarProducto(11)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/img/acompañamiento/cakepos2.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <select class="form-select relleno-12" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="1">Manjar</option>
+                <option value="2">Pastelera</option>
+                <option value="3">Frambuesa</option>
+                <option value="4">Nutella</option>
+              </select>
+              <select class="form-select cantidad-12" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a onclick="agregarProducto(12)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/img/acompañamiento/cakepos3.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <select class="form-select relleno-13" aria-label="Default select example">
+                <option selected>Relleno</option>
+                <option value="1">Manjar</option>
+                <option value="2">Pastelera</option>
+                <option value="3">Frambuesa</option>
+                <option value="4">Nutella</option>
+              </select>
+              <select class="form-select cantidad-13" aria-label="Default select example">
+                <option selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="card-footer d-md-flex justify-content-md-center">
+              <a onclick="agregarProducto(13)" class="btn btn1 btn-outline-success">Agregar al carro</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!--Footer-->
+    <footer id="footer" class="text-center text-white">
+      <div class="container pt-0" style="height: 6.5rem;">
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" style=" padding: 0,margin margin-bottom: 0rem;"
+            href="https://www.facebook.com/profile.php?id=100009075369122" role="button" data-mdb-ripple-color="dark"><i
+              class="bi bi-facebook"></i></a>
+          <!-- Instagram -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" style=" padding: 0;" href="https://www.instagram.com/tortitas__giss/"
+            role="button" data-mdb-ripple-color="dark"><i class="bi bi-instagram"></i></a>
+          <!-- WhatsApp -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" style=" padding: 0,margin margin-bottom: 0rem;"
+            href="https://api.whatsapp.com/send?phone=56993161234" role="button" data-mdb-ripple-color="dark"><i
+              class="bi bi-whatsapp"></i></a>
+          <p style="color: rgb(7, 5, 26);">Héroe José Argomedo 3723, Recoleta, Región Metropolitana.</p>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <div class="text-center text-dark p-3" style="background-color: #98c5d6;">
+        © 2023 Copyright: Hijos de Newton.
+      </div>
+    </footer>
+
+    <!--SCRIPTS-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <style>
+      body {
+        background: magnolia;
+        transition: 1s ease;
+      }
+
+      .container-fluid {
+        background: #dee2e5ff;
+      }
+
+      footer {
+      background:#dee2e5;
+      margin-top: 0.5rem;
+      margin-top: 3rem;
+    }
+
+      a {
+        text-decoration: none;
+        color: rgb(106, 106, 106);
+
+      }
+
+      footer {
+      background:#dee2e5;
+      margin-top: 0.5rem;
+      margin-top: 3rem;
+    }
+
+      .title {
+        text-align: center;
+        font-family: 'Courgette', cursive;
+        margin: 2rem;
+      }
+
+      .form-select {
+        margin: 0.5rem;
+        margin-left: 0.1rem;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      ul {
+        margin-right: 10rem;
+
+      }
+
+      #carousel {
+        margin-top: 0.5rem;
+      }
+
+      #toggleButton:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: rgba(132, 208, 204, 0.821);
+        transform: scale(1.03);
+        transition: 0.35s ease;
+      }
+
+      #toggleButton {
+        position: fixed;
+        height: 3.5rem;
+        width: 3.5rem;
+        line-height: 3.5rem;
+        bottom: 2rem;
+        right: 1rem;
+        background: rgba(14, 44, 60, 0.745);
+        color: white;
+        border-radius: 10rem;
+        text-align: center;
+        align-items: center;
+        font-size: 2rem;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.496);
+        z-index: 100;
+
+      }
+
+      #overlay {
+        display: none;
+        position: fixed;
+        justify-content: center;
+        top: 2.5%;
+        left: 5%;
+        width: 90%;
+        height: 95%;
+        background-color: rgb(235, 241, 245);
+        z-index: 1;
+        transition: 2s ease;
+        opacity: 0;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 2px 1px rgba(137, 137, 137, 0.496);
+      }
+
+      .carrito {
+        align-items: center;
+        text-align: center;
+        display: block;
+        justify-content: center;
+      }
+
+      .all {
+        opacity: 1;
+        transition: opacity 0.7s;
+      }
+
+      footer a:hover {
+        transform: scale(1.2);
+        transition: 1.5s ease;
+        transform: rotate(1080deg);
+
+      }
+
+      .navbar {
+        box-shadow: 0rem 0.1rem 5rem 2rem rgba(0, 0, 0, 0.2);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        height: 4.5;
+      }
+
+      .card {
+        box-shadow: 0rem 0.01rem 2rem 0.5rem rgba(0, 0, 0, 0.2);
+      }
+
+      .navfalso {
+        height: 4.5rem;
+        width: 100%;
+      }
+
+      .nav2falso {
+        height: 4.05rem;
+        width: 100%;
+      }
+
+      #cerrar {
+        position: absolute;
+        top: 0.1rem;
+        right: 1rem;
+        z-index: 100;
+        font-size: 2rem;
+      }
+
+      #cerrar:hover {
+        cursor: pointer;
+      }
+
+      .title {
+        text-align: center;
+        font-family: 'Courgette', cursive;
+        margin: 0.6rem;
+      }
+      .title-subtotal {
+        text-align: center;
+        font-family: 'Bree Serif', serif;
+        margin: 0.1rem;
+      }
+
+      .imgcarrito {
+        height: 5rem;
+        width: 5rem;
+      }
+
+      .contcarrito {
+        height: 85%;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border-radius: 1rem;
+        margin: auto;
+      }
+
+
+      @media (max-width: 1200px) {
+        .contcarrito {
+          height: 87%;
+          width: 90%;
+          overflow-y: auto;
+          overflow-x: hidden;
+          border-radius: 1rem;
+        }
+      }
+
+      .text-carrito {
+        position: fixed;
+        z-index: 100;
+        background-color: rgb(235, 241, 245);
+        left: 40%;
+      }
+
+      .h2falso {
+        background-color: rgb(235, 241, 245);
+        z-index: 100;
+        height: 4rem;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        box-shadow: 0rem 0.005rem 4rem 1.5rem rgba(0, 0, 0, 0.1);
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+
+      }
+
+      @media (max-width: 1200px) {
+        .text-carrito {
+          position: fixed;
+          z-index: 100;
+          background-color: rgb(235, 241, 245);
+          left: 15%;
+        }
+      }
+
+      .card-title {
+        text-align: center;
+      }
+.subtotal{
+  height: 40%;
+  width: 90%;
+}
+
+.card-carrito{
+  box-shadow: none;
+}
+.btn1{
+  display: block; margin: 0 auto; width: 80%;
+}
+
+
+
+      --magnolia: #fcf7ffff;
+      --battleship-gray: #798071ff;
+      --gunmetal: #143642ff;
+      --cordovan: #8e3b46ff;
+      --ice-blue: #9cfffaff;
+      --honeydew: #e3f3e2ff;
+      --timberwolf: #cecdcaff;
+      --platinum: #dee2e5ff;
+    </style>
+
+  </div>
+</body>
+
+</html>
