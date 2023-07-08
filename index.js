@@ -94,8 +94,7 @@ const mostrarCarrito = () => {
     console.log(rellenos);
 
     /*ACA HAY ALGO MAL KTMMM*/
-    if (carrito) {
-        carrito.forEach((prod) => {
+
 
             prod.cantidad = cantidades[prod.id - 1];
             prod.relleno = rellenos[prod.id - 1];
@@ -124,9 +123,8 @@ const mostrarCarrito = () => {
     </div>
     
         `;
-        });
     }
-}
+
 
 
 
