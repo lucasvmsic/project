@@ -34,17 +34,16 @@
 
   <div class="contcarrito">
     <nav class="nav2falso"></nav>
-    <h1>Hola</h1>
 
 
   </div>
 
   <div class="subtotal">
-    <h5 class="mx-auto m-2 title-subtotal">Subtotal: 1.000</h5>
+    <h5 class="mx-auto m-2 title-subtotal" id="subtotal">Subtotal: 0</h5>
       <div class="footer-carrito d-md-flex justify-content-center">
-        <button type="button" class="btn btn-outline-danger m-2 position-absolute bottom-0 end-50">Vaciar
+        <button type="button" class="btn btn-outline-danger m-2 position-absolute bottom-0 end-50" onclick="vaciarCarrito()">Vaciar
           carrito</button>
-        <button type="button" class="btn btn-outline-success m-2 position-absolute bottom-0 start-50">Comprar</button>
+        <button type="button" class="btn btn-outline-success m-2 position-absolute bottom-0 start-50" onclick="comprar()">Comprar</button>
       </div>
   </div>
 
@@ -70,7 +69,7 @@
               <a class="nav-link active" aria-current="page" href="acompañamiento.html">Tortas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="acompañamiento.html">Mini Donas</a>
+              <a class="nav-link active" aria-current="page" href="acompañamiento.html#minidonas">Mini Donas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="acompañamiento.html#cupcakes">Cupcakes</a>
@@ -89,7 +88,7 @@
 
 
 
-    <h1 class="title">Mini Donas</h1>
+    <h1 id="minidonas" class="title">Mini Donas</h1>
 
     <div class="container w-80 justify-content-center">
 
@@ -101,14 +100,14 @@
             <img src="/img/acompañamiento/dona1.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
               <h5 class="card-title">Precio: $10.000</h5>
-              <select class="form-select relleno" aria-label="Default select example">
+              <select class="form-select relleno-1" aria-label="Default select example">
                 <option selected>Relleno</option>
                 <option value="Manjar">Manjar</option>
                 <option value="Pastelera">Pastelera</option>
                 <option value="Frambuesa">Frambuesa</option>
                 <option value="Nutella">Nutella</option>
               </select>
-              <select class="form-select cantidad" aria-label="Default select example">
+              <select class="form-select cantidad-1" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -126,14 +125,14 @@
             <img src="/img/acompañamiento/dona2.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
               <h5 class="card-title">Precio: $20.000</h5>
-              <select class="form-select relleno" aria-label="Default select example">
+              <select class="form-select relleno-2" aria-label="Default select example">
                 <option selected>Relleno</option>
                 <option value="Manjar">Manjar</option>
                 <option value="Pastelera">Pastelera</option>
                 <option value="Frambuesa">Frambuesa</option>
                 <option value="Nutella">Nutella</option>
               </select>
-              <select class="form-select cantidad" aria-label="Default select example">
+              <select class="form-select cantidad-2" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -151,14 +150,14 @@
             <img src="/img/acompañamiento/dona3.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
               <h5 class="card-title">Precio: $30.000</h5>
-              <select class="form-select relleno" aria-label="Default select example">
+              <select class="form-select relleno-3" aria-label="Default select example">
                 <option selected>Relleno</option>
                 <option value="Manjar">Manjar</option>
                 <option value="Pastelera">Pastelera</option>
                 <option value="Frambuesa">Frambuesa</option>
                 <option value="Nutella">Nutella</option>
               </select>
-              <select class="form-select cantidad" aria-label="Default select example">
+              <select class="form-select cantidad-3" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -176,14 +175,14 @@
             <img src="/img/acompañamiento/dona4.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
               <h5 class="card-title">Precio: $40.000</h5>
-              <select class="form-select relleno" aria-label="Default select example">
+              <select class="form-select relleno-4" aria-label="Default select example">
                 <option selected>Relleno</option>
                 <option value="Manjar">Manjar</option>
                 <option value="Pastelera">Pastelera</option>
                 <option value="Frambuesa">Frambuesa</option>
                 <option value="Nutella">Nutella</option>
               </select>
-              <select class="form-select cantidad" aria-label="Default select example">
+              <select class="form-select cantidad-4" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -201,14 +200,14 @@
             <img src="/img/acompañamiento/dona5.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
               <h5 class="card-title">Precio: $50.000</h5>
-              <select class="form-select relleno" aria-label="Default select example">
+              <select class="form-select relleno-5" aria-label="Default select example">
                 <option selected>Relleno</option>
                 <option value="Manjar">Manjar</option>
                 <option value="Pastelera">Pastelera</option>
                 <option value="Frambuesa">Frambuesa</option>
                 <option value="Nutella">Nutella</option>
               </select>
-              <select class="form-select cantidad" aria-label="Default select example">
+              <select class="form-select cantidad-5" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -226,14 +225,14 @@
             <img src="/img/acompañamiento/dona6.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
               <h5 class="card-title">Precio: $60.000</h5>
-              <select class="form-select relleno" aria-label="Default select example">
+              <select class="form-select relleno-6" aria-label="Default select example">
                 <option selected>Relleno</option>
                 <option value="Manjar">Manjar</option>
                 <option value="Pastelera">Pastelera</option>
                 <option value="Frambuesa">Frambuesa</option>
                 <option value="Nutella">Nutella</option>
               </select>
-              <select class="form-select cantidad" aria-label="Default select example">
+              <select class="form-select cantidad-6" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -251,14 +250,14 @@
             <img src="/img/acompañamiento/dona7.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
               <h5 class="card-title">Precio: $70.000</h5>
-              <select class="form-select relleno" aria-label="Default select example">
+              <select class="form-select relleno-7" aria-label="Default select example">
                 <option selected>Relleno</option>
                 <option value="Manjar">Manjar</option>
                 <option value="Pastelera">Pastelera</option>
                 <option value="Frambuesa">Frambuesa</option>
                 <option value="Nutella">Nutella</option>
               </select>
-              <select class="form-select cantidad" aria-label="Default select example">
+              <select class="form-select cantidad-7" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -287,14 +286,15 @@
           <div class="card h-100">
             <img src="/img/acompañamiento/cupcake1.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
-              <select id="cupcake.relleno" class="form-select" aria-label="Default select example">
+              <h5 class="card-title">Precio: $5.000</h5>
+              <select class="form-select relleno-8" aria-label="Default select example">
                 <option selected>Relleno</option>
                 <option value="Manjar">Manjar</option>
                 <option value="Pastelera">Pastelera</option>
                 <option value="Frambuesa">Frambuesa</option>
                 <option value="Nutella">Nutella</option>
               </select>
-              <select id="cupcake.cantidad" class="form-select" aria-label="Default select example">
+              <select class="form-select cantidad-8" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -303,7 +303,7 @@
               </select>
             </div>
             <div class="card-footer d-md-flex justify-content-md-center">
-              <a onclick="cupcake()" class="btn btn1 btn-outline-success">Agregar al carro</a>
+              <a onclick="agregarProducto(8)" class="btn btn1 btn-outline-success">Agregar al carro</a>
             </div>
           </div>
         </div>
@@ -311,14 +311,15 @@
           <div class="card h-100">
             <img src="/img/acompañamiento/cupcake2.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
-              <select class="form-select" aria-label="Default select example">
+              <h5 class="card-title">Precio: $10.000</h5>
+              <select class="form-select relleno-9" aria-label="Default select example">
                 <option selected>Relleno</option>
-                <option value="1">Manjar</option>
-                <option value="2">Pastelera</option>
-                <option value="3">Frambuesa</option>
-                <option value="4">Nutella</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
               </select>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select cantidad-9" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -327,7 +328,7 @@
               </select>
             </div>
             <div class="card-footer d-md-flex justify-content-md-center">
-              <a href="acompañamiento.html" class="btn btn1 btn-outline-success">Agregar al carro</a>
+              <a onclick="agregarProducto(9)" class="btn btn1 btn-outline-success">Agregar al carro</a>
             </div>
           </div>
         </div>
@@ -335,14 +336,15 @@
           <div class="card h-100">
             <img src="/img/acompañamiento/cupcake3.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
-              <select class="form-select" aria-label="Default select example">
+              <h5 class="card-title">Precio: $12.000</h5>
+              <select class="form-select relleno-10" aria-label="Default select example">
                 <option selected>Relleno</option>
-                <option value="1">Manjar</option>
-                <option value="2">Pastelera</option>
-                <option value="3">Frambuesa</option>
-                <option value="4">Nutella</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
               </select>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select cantidad-10" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -351,7 +353,7 @@
               </select>
             </div>
             <div class="card-footer d-md-flex justify-content-md-center">
-              <a href="acompañamiento.html" class="btn btn1 btn-outline-success">Agregar al carro</a>
+              <a onclick="agregarProducto(10)" class="btn btn1 btn-outline-success">Agregar al carro</a>
             </div>
           </div>
         </div>
@@ -370,14 +372,15 @@
           <div class="card h-100">
             <img src="/img/acompañamiento/cakepos1.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
-              <select class="form-select" aria-label="Default select example">
+              <h5 class="card-title">Precio: $60.000</h5>
+              <select class="form-select relleno-11" aria-label="Default select example">
                 <option selected>Relleno</option>
-                <option value="1">Manjar</option>
-                <option value="2">Pastelera</option>
-                <option value="3">Frambuesa</option>
-                <option value="4">Nutella</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
               </select>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select cantidad-11" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -386,7 +389,7 @@
               </select>
             </div>
             <div class="card-footer d-md-flex justify-content-md-center">
-              <a href="productos.html" class="btn btn1 btn-outline-success">Agregar al carro</a>
+              <a onclick="agregarProducto(11)" class="btn btn1 btn-outline-success">Agregar al carro</a>
             </div>
           </div>
         </div>
@@ -394,14 +397,15 @@
           <div class="card h-100">
             <img src="/img/acompañamiento/cakepos2.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
-              <select class="form-select" aria-label="Default select example">
+              <h5 class="card-title">Precio: $30.000</h5>
+              <select class="form-select relleno-12" aria-label="Default select example">
                 <option selected>Relleno</option>
-                <option value="1">Manjar</option>
-                <option value="2">Pastelera</option>
-                <option value="3">Frambuesa</option>
-                <option value="4">Nutella</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
               </select>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select cantidad-12" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -410,7 +414,7 @@
               </select>
             </div>
             <div class="card-footer d-md-flex justify-content-md-center">
-              <a href="acompañamiento.html" class="btn btn1 btn-outline-success">Agregar al carro</a>
+              <a onclick="agregarProducto(12)" class="btn btn1 btn-outline-success">Agregar al carro</a>
             </div>
           </div>
         </div>
@@ -418,14 +422,15 @@
           <div class="card h-100">
             <img src="/img/acompañamiento/cakepos3.jpg" class="card-img-top" alt="...">
             <div class="card-body ">
-              <select class="form-select" aria-label="Default select example">
+              <h5 class="card-title">Precio: $35.000</h5>
+              <select class="form-select relleno-13" aria-label="Default select example">
                 <option selected>Relleno</option>
-                <option value="1">Manjar</option>
-                <option value="2">Pastelera</option>
-                <option value="3">Frambuesa</option>
-                <option value="4">Nutella</option>
+                <option value="Manjar">Manjar</option>
+                <option value="Pastelera">Pastelera</option>
+                <option value="Frambuesa">Frambuesa</option>
+                <option value="Nutella">Nutella</option>
               </select>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select cantidad-13" aria-label="Default select example">
                 <option selected>Cantidad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -434,7 +439,7 @@
               </select>
             </div>
             <div class="card-footer d-md-flex justify-content-md-center">
-              <a href="acompañamiento.html" class="btn btn1 btn-outline-success">Agregar al carro</a>
+              <a onclick="agregarProducto(13)" class="btn btn1 btn-outline-success">Agregar al carro</a>
             </div>
           </div>
         </div>
