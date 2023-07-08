@@ -211,7 +211,7 @@ var mensaje = '';
 
    
     if(carrito.length>0){
-    location.href = 'https://wa.me/56993161234?text=Hola,%20buenas%20tardes,%20Quiero:%0A' + mensaje;
+    location.href = 'https://wa.me/56993161234?text=Hola,%20buenas%20tardes,%20quiero:%0A' + mensaje;
     }else toastr.error("El carrito está vacío.");
   };
 
